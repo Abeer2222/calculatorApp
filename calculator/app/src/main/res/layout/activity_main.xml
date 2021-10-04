@@ -56,7 +56,7 @@
             android:text="AC" />
 
         <Button
-            style="@style/buttonNumber"
+            style="@style/buttonOperator"
             android:textColor="@color/purple_200"
             android:onClick="backSpaceAction"
             android:text="⌫"/>

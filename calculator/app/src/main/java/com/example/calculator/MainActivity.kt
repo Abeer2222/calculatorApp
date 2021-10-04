@@ -10,16 +10,33 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private var canAddOperation = false
     private var canAddDecimal = true
+    private lateinit var plusMinus: Button
 
-    //private lateinit var plusMinus: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /* plusMinus= findViewById(R.id.plusMinus)
-         plusMinus.setOnClickListener{
-             PlusMinus()
-         }*/
+        plusMinus = findViewById(R.id.plusMinus)
+        plusMinus.setOnClickListener {
+           // PlusMinus()
+        }
     }
+
+    /*fun PlusMinus(passedList: MutableList<Any>): Float {
+        var result = passedList[0]
+        var minus = "+/-"
+        var toF= result.toString().toFloat()
+        for (i in passedList.indices) {
+            if (passedList[i] is Char && i != passedList.lastIndex) {
+                val operator = passedList[i]
+                val nextDigit = passedList[i + 1] as Float
+                if (operator == minus)
+                    result == "-$nextDigit"
+
+                if (operator == '-')
+                    result = nextDigit
+            }
+        }
+    }*/
 
     fun numberAction(view: View) {
         if (view is Button) {
@@ -54,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         if (length > 0)
             workingsTV.text = workingsTV.text.subSequence(0, length - 1)
     }
+
 
     /* fun PlusMinus(){
          if(operator==' '){
